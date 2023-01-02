@@ -10,18 +10,6 @@ const PORT = process.env.PORT || 9000
 
 const app = express()
 
-//const { MongoClient } = require('mongodb');
-//const uri = "mongodb+srv://diamoham:tmtcpkady9QDvr@cluster0.8jomv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-//client.connect(err => {
-//  const collection = client.db("test").collection("devices");
-//  // perform actions on the collection object
-//  console.log("Connected to MongoDB database")
-//  client.close();
-//});
-
-
-
 const mongoString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.8jomv.mongodb.net/Blog?retryWrites=true&w=majority`
 
 mongoose.connect(mongoString, {useNewUrlParser: true, useUnifiedTopology: true})

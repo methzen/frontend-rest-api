@@ -36,7 +36,7 @@ module.exports={
       
         BlogPostModel.find({dateTimestamp: {$lte: now}}, "title urlTitle dateTimestamp tags thumbnailImageUrl")
         .sort({dateTimestamp: -1})
-        .limit(3)
+        .limit(10)
         .exec(function(error, posts) {
           if (error) {
             callback({getDataError: true})
