@@ -9,7 +9,7 @@ const BlogPostModel = require("../../models/post.js")
 
 const config = require("../../config.js")
 
-const sitemapDirLocation = path.join(__dirname, "..", "..", "..", "..", "frontend", "website", "public", "sitemap.xml")
+const sitemapDirLocation = path.join(__dirname, "..", "..", "..", "..", "website", "public", "sitemap.xml")
 
 module.exports = {
   updateSitemapXmlFile: function(callback) {

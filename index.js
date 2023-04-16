@@ -25,7 +25,23 @@ mongoose.connection.on("open", function() {
 })
 
 app.use(helmet())
+
+app.use(cors({
+  origin: process.env.NODE_ENV === "development" ? config.devAdminURL : /admin.mouhamadoudia.fr$/,
+  credentials: true
+}))
+app.use(bodyParser.json({limit: "50mb"}))
+app.use(bodyParser.urlencoded({ extended: false, limit: "50mb" }))
+
+app.use(cookieParser())
+
 app.use(require("./routes/index.js"))
+
+app.use(require("./routes/admin-user/index.js"))
+app.use(require("./routes/blog-posts/index.js"))
+app.use(require("./routes/images/index.js"))
+app.use(require("./routes/sitemap/index.js"))
+
 app.use("/assets",express.static(path.join(__dirname, "..", "..", "assets")))
 
 app.listen(PORT, function () {
