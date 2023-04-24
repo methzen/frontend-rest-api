@@ -3,6 +3,10 @@ const helmet = require("helmet")
 const mongoose = require("mongoose")
 const dotenv= require("dotenv")
 const path = require("path")
+const cors = require("cors")
+const config =require("./config")
+const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
 dotenv.config()
 
@@ -27,7 +31,7 @@ mongoose.connection.on("open", function() {
 app.use(helmet())
 
 app.use(cors({
-  origin: process.env.NODE_ENV === "development" ? config.devAdminURL : /admin.mouhamadoudia.fr$/,
+  origin: process.env.NODE_ENV === "development" ? config.devAdminURL : /mouhamadoudia.me$/,
   credentials: true
 }))
 app.use(bodyParser.json({limit: "50mb"}))

@@ -84,8 +84,7 @@ module.exports = {
         })
       }
     })
-  }
-  /*
+  },
   createNewAdminUser: function(email, password, callback) {
     const newAdminUser = new AdminUserModel({
       id: randomstring.generate(20),
@@ -103,5 +102,5 @@ module.exports = {
       }
     })
   }
-  */
+  
 }

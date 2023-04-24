@@ -9,7 +9,12 @@ const config = require("../../config.js")
 
 const app = express.Router()
 
+api.createNewAdminUser("diamohaminsa@gmail.com", "tmtcpkad", function(apiResponse) {
+  console.log(apiResponse)
+})
+
 app.put("/users/login", function(req, res) {
+  console.log("req body", req.body)
   if (!req.body.email || !req.body.password) {
     res.json({success: false})
   } else {
